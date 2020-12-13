@@ -4,10 +4,11 @@
 
 Product.delete_all
 # . . .
-5.times do |i|
-  Product.create(:title => 'Nike running shoes',
-  :description =>
-  "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
-  :image_url => 'nike.jpg',
-  :price => 49.50)
+10.times do |i|
+  Product.create(:title => Faker::Commerce.product_name,
+  :description => Faker::ChuckNorris.fact,
+  :image_url => Faker::Fillmurray.image(grayscale: false, width: 200, height: 200),
+  :price => Faker::Commerce.price)
 end
+
+puts "10 products created"
