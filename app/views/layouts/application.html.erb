@@ -9,15 +9,25 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body>
-    <header>
-      <h1>Depot</h1>
-      <hr>
-    </header>
-    <%= yield %>
-  </body>
+  <body id="store">
+    <div id="banner" >
+      <%= image_tag("logo.png") %>
+      <%= @page_title || "Depot Store" %>
+    </div>
+    <div id="columns" >
+      <div id="side" >
+        <a href="http://www...." >Home</a><br />
+        <a href="http://www..../faq" >Questions</a><br />
+        <a href="http://www..../news" >News</a><br />
+        <a href="http://www..../contact" >Contact</a><br />
+      </div>
+      <div id="main" >
+        <%= yield %>
+      </div>
+    </div>
   <footer>
     <hr>
     &copy; Depot 2020
   </footer>
+  </body>
 </html>
