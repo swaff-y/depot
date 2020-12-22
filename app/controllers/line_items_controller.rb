@@ -33,7 +33,7 @@ class LineItemsController < ApplicationController
         format.html { redirect_to store_url }
         #for ajax update sidebar cart - does not work
         #ToDo: fidna fix for this error
-        format.js
+        format.js { @current_item = @line_item}
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new }
