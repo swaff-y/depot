@@ -16,9 +16,12 @@
     </div>
     <div id="columns" >
       <div id="side" >
-        <div class="" id="cart">
-          <%= render @cart%>
-        </div>
+        <!-- ToDo: need to hide thid when cart is empty -->
+        <% if @cart %>
+          <%= hidden_div_if(@cart.line_items.empty?, :id => "cart" ) do %>
+            <%= render @cart %>
+          <% end %>
+        <% end %>
         <a href="http://www...." >Home</a><br />
         <a href="http://www..../faq" >Questions</a><br />
         <a href="http://www..../news" >News</a><br />

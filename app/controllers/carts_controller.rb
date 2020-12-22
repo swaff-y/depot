@@ -18,7 +18,7 @@ class CartsController < ApplicationController
     else
       respond_to do |format|
         format.html #show.html.erb
-        format.xml {render :xml => @cart}
+        # format.xml {render :xml => @cart}
       end #respond_to do
     end
   end
@@ -68,10 +68,9 @@ class CartsController < ApplicationController
     @cart = current_cart
     @cart.destroy
     session[:cart_id] = nil
-
     respond_to do |format|
-      format.html { redirect_to store_url, :notice => 'Your cart is currently empty' }
-      format.xml { head :ok }
+      format.html { redirect_to(store_url) }
+      # format.xml { head :ok }
     end
   end
 

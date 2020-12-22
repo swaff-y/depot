@@ -13,7 +13,5 @@
 //= require rails-ujs
 //= require_tree .
 
-$('')
-const renderSideBar = function(){
-  $('#cart').html("<%= render @cart %>")
-}
+
+ // console.log( document.getElementById("cart"));
