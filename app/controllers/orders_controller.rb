@@ -5,6 +5,10 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     @orders = Order.all
+
+    respond_to do |format|
+      format.html
+    end
   end
 
   # GET /orders/1

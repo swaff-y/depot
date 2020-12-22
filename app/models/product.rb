@@ -1,7 +1,8 @@
 class Product < ApplicationRecord
-  default_scope{ order( title: :desc) }
+  # default_scope { where(order: "title") }
   has_many :line_items
   before_destroy :ensure_not_refereneced_by_any_line_item
+  has_many :orders, :through => :line_items
 
   # ensure that there are no line items referencing this Product
   def ensure_not_refereneced_by_any_line_item
