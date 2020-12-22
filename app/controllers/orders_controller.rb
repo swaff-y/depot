@@ -49,6 +49,7 @@ class OrdersController < ApplicationController
           format.xml { render :xml => @order.errors, :status => :unprocessable_entity }
         end
       end
+    end
   end
 
   # PATCH/PUT /orders/1
